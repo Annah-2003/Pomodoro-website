@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowseRoute as Route, Route,Switch } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import FocusZone from './components/focusZone';
+import TaskManager from './components/taskManager';
+import TaskTracker from './components/taskTracker';
+import ProductivityReport from './components/productivityReport';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+
+
+  return(
+    <Router>
+      <div className="App">
+        <Header/>
+        <Switch>
+          <Route exact path="/" component={FocusZone}/>
+          <Route path="/task-manager" component={() => <TaskManager tasks={tasks} setTasks={setTasks} />}/>
+          <Route path="/task-tracker" component={() => <TaskTracker tasks={tasks} />}/>
+          <Route path="/productivity-report" component={() => <ProductivityReport tasks={tasks} />} />
+        </Switch>
+        <Footer/>
+      </div>
+    </Router>
   );
-}
+};
+
+
 
 export default App;
