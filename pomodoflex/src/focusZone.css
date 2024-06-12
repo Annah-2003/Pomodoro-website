@@ -1,0 +1,21 @@
+.focus-zone.default{
+    background-color: #f0f0f0;
+}
+
+.focus-zone.reading{
+    background-color:#eae;
+}
+
+.focus-zone.coding{
+    background-color: #d8c3a5;
+}
+
+.focus-zone.brainstorming{
+    background-color: #8e8d8e;
+}
+
+.focus-zone{
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px ;
+}
