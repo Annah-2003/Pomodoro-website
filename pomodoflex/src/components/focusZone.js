@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Button, Form } from 'react-bootstrap';
-import './FocusZone.css';
+import './focusZone.css';
 
 const FocusZone = () => {
   const [theme, setTheme] = useState('default');
