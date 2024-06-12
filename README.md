@@ -16,7 +16,6 @@
 
       Ensure you have Node.js and npm installed on your system. You can download them from nodejs.org.
  # Create React App:
-    
-   npx create-react-app pomodoflex
-   cd pomodoflex
+      npx create-react-app pomodoflex
+      cd pomodoflex
 
