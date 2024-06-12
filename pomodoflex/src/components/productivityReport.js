@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Table } from 'react-bootstrap';
-import './ProductivityReport.css';
+import './productivityReport.css';
 
 const ProductivityReport = ({ tasks }) => {
   const completedTasks = tasks.filter(task => task.completed).length;
