@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FocusZone from './components/focusZone';
@@ -15,12 +15,12 @@ const App = () => {
     <Router>
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/" component={FocusZone} />
-          <Route path="/task-manager" component={() => <TaskManager tasks={tasks} setTasks={setTasks} />} />
-          <Route path="/task-tracker" component={() => <TaskTracker tasks={tasks} />} />
-          <Route path="/productivity-report" component={() => <ProductivityReport tasks={tasks} />} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<FocusZone />} />
+          <Route path="/task-manager" element={<TaskManager tasks={tasks} setTasks={setTasks} />} />
+          <Route path="/task-tracker" element={<TaskTracker tasks={tasks} />} />
+          <Route path="/productivity-report" element={<ProductivityReport tasks={tasks} />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
